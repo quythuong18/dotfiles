@@ -44,6 +44,9 @@ return {
 
             -- Setup language servers.
             local lspconfig = require('lspconfig')
+
+
+            lspconfig.clangd.setup {}
             lspconfig.pyright.setup {}
             lspconfig.tsserver.setup {}
             lspconfig.cssls.setup {

@@ -4,9 +4,14 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export FONTS="$HOME/.local/share/fonts"
-export TERM="kitty"
-# export EDITOR="nvim"
+# export TERM="kitty"
+export EDITOR="nvim"
 export _Z_DATA="$HOME/.z_data/.z"
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/electron29/:/usr/lib/"
+
+# export GTK_IM_MODULE="ibus"
+# export QT_IM_MODULE="ibus"
+export XMODIFIERS="@im=ibus"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -75,8 +80,8 @@ ZSH_THEME="dpoggi"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
-	z
+    git
+    z
     zsh-syntax-highlighting
     zsh-autosuggestions
 )
@@ -87,6 +92,7 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.nix-profile/bin:$PATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -113,8 +119,10 @@ alias lf="lfrun"
 alias cc="xclip -selection clipboard"
 alias nv="nvim"
 alias v="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
-# pfetch
-fortune -s
+alias sp="pacmd set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-speaker"
+alias he="pacmd set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-headphones"
+pfetch
+#fortune -s
 
 
 # Load Angular CLI autocompletion.

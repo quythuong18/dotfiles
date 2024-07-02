@@ -25,13 +25,26 @@ font pango: JetBrainsMonoNL NF Bold 11
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 #exec --no-startup-id conky &
-exec --no-startup-id feh --bg-scale ~/Downloads/wallpapers/watch_tower.png
+exec --no-startup-id feh --bg-scale ~/Downloads/wallpapers/laying_girl.jpg
 exec --no-startup-id picom -b &
 exec --no-startup-id ibus-daemon -rxRd
 
 # dropdown terminal
-exec_always --no-startup-id kitti3 -p CC -s 0.65 0.5
-bindsym $mod+n nop kitti3
+# Send focused window to scratchpad
+bindsym $mod+Shift+n move scratchpad
+
+# Show scratchpad window
+bindsym $mod+n scratchpad show
+
+# Start Kitty terminal in the scratchpad on startup
+exec --no-startup-id kitty --class dropdown
+
+# define dropdown windows
+for_window [class="dropdown"] floating enable
+for_window [class="dropdown"] resize set 1000 500
+for_window [class="dropdown"] move position center
+for_window [class="dropdown"] move scratchpad
+for_window [class="dropdown"] border pixel 4
 
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -52,9 +65,9 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-# light
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+# backlight
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10 # decrease screen brightness
 
 
 bindsym $mod+Shift+b bar mode toggle
@@ -77,6 +90,9 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 
 # start firefox
 bindsym $mod+backslash exec --no-startup-id firefox
+
+# start the rofi - app launcher
+bindsym $mod+bracketleft exec --no-startup-id rofi -show drun
 
 # screen shot
 bindsym $mod+shift+s exec --no-startup-id flameshot gui
@@ -215,7 +231,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # border 
-set $border 2
+set $border 3
 default_border pixel $border
 default_floating_border pixel $border
 
@@ -228,7 +244,7 @@ gaps outer 0
 bar {
 	status_command SCRIPT_DIR=$HOME/.config/i3blocks/i3blocks-contrib i3blocks i3blocks -c ~/.config/i3blocks/i3blocks.conf
 	position top
-	mode dock
+	mode hide
 	hidden_state hide
 	modifier Mod4
     colors {
