@@ -118,9 +118,10 @@ export PATH="$HOME/.nix-profile/bin:$PATH"
 alias lf="lfrun"
 alias cc="xclip -selection clipboard"
 alias nv="nvim"
-alias v="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
+# alias v="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
 alias sp="pacmd set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-speaker"
 alias he="pacmd set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-headphones"
+alias yz="yazi"
 pfetch
 #fortune -s
 

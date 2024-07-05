@@ -25,9 +25,12 @@ font pango: JetBrainsMonoNL NF Bold 11
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 #exec --no-startup-id conky &
-exec --no-startup-id feh --bg-scale ~/Downloads/wallpapers/laying_girl.jpg
+# exec --no-startup-id feh --no-xinerama --bg-fill ~/Downloads/wallpapers/laying_girl.jpg
+exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom -b &
 exec --no-startup-id ibus-daemon -rxRd
+
+exec --no-startup-id xrandr --output HDMI-1-2 --auto --left-of eDP-1-1
 
 # dropdown terminal
 # Send focused window to scratchpad
