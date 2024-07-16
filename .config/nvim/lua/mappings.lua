@@ -12,8 +12,10 @@ end
 vim.g.mapleader = ' '
 
 -- NORMAL MODE
--- Close tab within buffer's disappearing
+-- Close a buffer
 map('n', 'mm', ':bd<CR>')
+-- Close all buffers
+map('n', 'MM', '::%bd|e#|bd#|\'"<CR>')
 -- Save file
 map('n', '<C-s>', ':w<CR>')
 -- Copy all
