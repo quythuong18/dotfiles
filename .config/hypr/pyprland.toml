@@ -1,0 +1,9 @@
+[pyprland]
+plugins = ["scratchpads"]
+
+[scratchpads.kitty]
+command = "kitty"
+class = "kitty"  # check: hyprctl clients | grep class
+size = "60% 50%"  # size of the window relative to the screen size
+animation = "fromTop"
+state = "floating"
