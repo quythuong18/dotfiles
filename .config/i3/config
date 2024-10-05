@@ -30,7 +30,7 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom -b &
 exec --no-startup-id ibus-daemon -rxRd
 
-exec --no-startup-id xrandr --output HDMI-1-2 --auto --left-of eDP-1-1
+#exec --no-startup-id xrandr --output HDMI-1-2 --auto --left-of eDP-1-1
 
 # dropdown terminal
 # Send focused window to scratchpad
@@ -45,9 +45,10 @@ exec --no-startup-id kitty --class dropdown
 # define dropdown windows
 for_window [class="dropdown"] floating enable
 for_window [class="dropdown"] resize set 1000 500
-for_window [class="dropdown"] move position center
+for_window [class="dropdown"] move position 460 20
 for_window [class="dropdown"] move scratchpad
 for_window [class="dropdown"] border pixel 4
+
 
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -73,7 +74,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10 # increase screen b
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10 # decrease screen brightness
 
 
-bindsym $mod+Shift+b bar mode toggle
+bindsym Mod4+b bar mode toggle
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -83,7 +84,8 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+#bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+c kill
@@ -92,7 +94,7 @@ bindsym $mod+c kill
 bindsym $mod+d exec --no-startup-id dmenu_run
 
 # start firefox
-bindsym $mod+backslash exec --no-startup-id firefox
+bindsym $mod+backslash exec --no-startup-id firefox-developer-edition
 
 # start the rofi - app launcher
 bindsym $mod+bracketleft exec --no-startup-id rofi -show drun
@@ -234,7 +236,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # border 
-set $border 3
+set $border 2
 default_border pixel $border
 default_floating_border pixel $border
 
@@ -247,7 +249,7 @@ gaps outer 0
 bar {
 	status_command SCRIPT_DIR=$HOME/.config/i3blocks/i3blocks-contrib i3blocks i3blocks -c ~/.config/i3blocks/i3blocks.conf
 	position top
-	mode hide
+	mode dock
 	hidden_state hide
 	modifier Mod4
     colors {

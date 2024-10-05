@@ -1,0 +1,3 @@
+[keybindings] hide_window = F1
+
+[profiles] [[dropdown]] exit_action = close scrollback_lines = 10000 background_image = None scroll_on_output = False show_titlebar = False

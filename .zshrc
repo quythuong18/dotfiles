@@ -11,7 +11,7 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/electron29/:/usr/lib/"
 
 # export GTK_IM_MODULE="ibus"
 # export QT_IM_MODULE="ibus"
-export XMODIFIERS="@im=ibus"
+# export XMODIFIERS="@im=ibus"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -93,7 +93,6 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.nix-profile/bin:$PATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -124,9 +123,9 @@ alias sp="pacmd set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-
 alias he="pacmd set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-headphones"
 alias yz="yazi"
 alias ff="fastfetch"
+alias 4th="cd /mnt/Windows/Users/quythuong/Desktop/MyFolder/HCMUTE/4th_year"
 #pfetch
 fortune -s
-
 
 # Load Angular CLI autocompletion.
 # source <(ng completion script)
@@ -134,7 +133,3 @@ fortune -s
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 # [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-#. "$HOME/.atuin/bin/env"
-
-# eval "$(atuin init zsh --disable-up-arrow)"

@@ -61,9 +61,11 @@ map('n', '<leader><leader>', ':HopWord<CR>')
 -- switch to normal mode
 map('i', 'jj', '<ESC>')
 -- insert mode motions
-map('i', '<C-l>', '<Right>')
+-- map('i', '<C-l>', '<Right>')
+-- map('i', '<C-h>', '<Left>')
+map('i', '<C-f>', '<Right>')
+map('i', '<C-b>', '<Left>')
 map('i', '<C-j>', '<Down>')
-map('i', '<C-h>', '<Left>')
 map('i', '<C-k>', '<Up>')
 
 -- save file
