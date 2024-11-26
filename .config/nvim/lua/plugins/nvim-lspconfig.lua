@@ -45,9 +45,10 @@ return {
             -- Setup language servers.
             local lspconfig = require('lspconfig')
 
+            require'lspconfig'.erlangls.setup{}
             lspconfig.clangd.setup {}
             lspconfig.pyright.setup {}
-            lspconfig.tsserver.setup {}
+            lspconfig.ts_ls.setup {}
             lspconfig.cssls.setup {
                 capabilities = capabilities,
             }

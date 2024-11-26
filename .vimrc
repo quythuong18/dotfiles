@@ -26,6 +26,8 @@ set autoindent
 " set clipboard^=unamed
 set clipboard=unnamedplus
 
+set splitright
+set splitbelow
 
 set t_Co=256
 set cursorline
@@ -48,13 +50,25 @@ set wildmenu
 " === KEY MAPPING ===
 " Press jj  to return to normal mode when in insert mode
 inoremap jj <ESC>
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
 
-" Press ff when in normal mode, to save file
-nnoremap ff :w<CR>
+" Press Ctrl s when in normal mode, to save file
+nnoremap <C-s> :w<CR>
 
 " Press ctrl+p to move on the next tab
-nnoremap <C-p> :bnext<CR>
-nnoremap <C-n> :bprevious<CR>
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprevious<CR>
+
+" center to the middle
+nnoremap <C-u> <C-u>zz
+nnoremap <C-d> <C-d>zz
+
+" pane navigation
+nnoremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
 
 " Close 1 buffer
 nnoremap mm :bd<CR>

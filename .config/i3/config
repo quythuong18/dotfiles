@@ -15,7 +15,7 @@ set $mod Mod1
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 #font pango:Hack Nerd Font bold
-font pango: JetBrainsMonoNL NF Bold 11
+font pango: JetBrainsMonoNL NF Bold 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -25,9 +25,8 @@ font pango: JetBrainsMonoNL NF Bold 11
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 #exec --no-startup-id conky &
-# exec --no-startup-id feh --no-xinerama --bg-fill ~/Downloads/wallpapers/laying_girl.jpg
-exec --no-startup-id nitrogen --restore
-exec --no-startup-id picom -b &
+exec --no-startup-id feh --no-xinerama --bg-fill ~/Downloads/wallpapers/archlinux.png
+#exec --no-startup-id nitrogen --restore
 exec --no-startup-id ibus-daemon -rxRd
 
 #exec --no-startup-id xrandr --output HDMI-1-2 --auto --left-of eDP-1-1
@@ -101,9 +100,6 @@ bindsym $mod+bracketleft exec --no-startup-id rofi -show drun
 
 # screen shot
 bindsym $mod+shift+s exec --no-startup-id flameshot gui
-
-#shutdown 
-bindsym $mod+p exec /home/quythuong/.local/bin/YesNoPrompt "Do you want to shutdown?" "shutdown -h now"
 
 # zoom
 bindsym $mod+z exec /home/quythuong/.local/bin/zoom
