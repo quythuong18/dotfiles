@@ -36,12 +36,6 @@ map('n', '<C-y>', '5<C-y>')
 -- set CAPSLOCK to ESC
 map('n', '<CAPSLOCK>', '<ESC>')
 
--- Internal terminal
--- map('n', '<F7>', ':FloatermNew<CR>')
--- map('i', '<F4>', '<ESC>:FloatermToggle')
--- map('n', '<F3>', ':FloatermKill<CR>')
--- map('n', '<F8>', ':FloatermNext<CR>')
-
 -- Bufferline mappings
 map('n', '<C-n>', ':bnext<CR>')
 map('n', '<C-p>', ':bprev<CR>')
