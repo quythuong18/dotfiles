@@ -6,6 +6,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export FONTS="$HOME/.local/share/fonts"
 # export TERM="kitty"
 export EDITOR="nvim"
+export MANPAGER="nvim +Man!"
 export _Z_DATA="$HOME/.z_data/.z"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/electron29/:/usr/lib/"
 
@@ -124,7 +125,6 @@ alias sp="pacmd set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-
 alias he="pacmd set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-headphones"
 alias yz="yazi"
 alias ff="fastfetch"
-alias 4th="cd /mnt/Windows/Users/quythuong/Desktop/MyFolder/HCMUTE/4th_year"
 #pfetch
 fortune -s
 

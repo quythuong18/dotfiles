@@ -7,8 +7,10 @@ return {
             options = {
               icons_enabled = true,
               theme = 'auto',
-              component_separators = { left = '', right = ''},
-              section_separators = { left = '', right = ''},
+              -- component_separators = { left = '', right = ''},
+              -- section_separators = { left = '', right = ''},
+              component_separators = '',
+              section_separators = '',
               disabled_filetypes = {
                 statusline = {},
                 winbar = {},
@@ -26,7 +28,7 @@ return {
             sections = {
               lualine_a = {'mode'},
               lualine_b = {'branch', 'diff', 'diagnostics'},
-              lualine_c = {'filename'},
+              lualine_c = {'buffers'},
               lualine_x = {'encoding', 'fileformat', 'filetype'},
               lualine_y = {'progress'},
               lualine_z = {'location'}

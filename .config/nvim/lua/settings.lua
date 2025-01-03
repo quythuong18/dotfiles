@@ -6,8 +6,8 @@ local autocmd = vim.api.nvim_create_autocmd
 
 set.expandtab = true
 set.smarttab = true
-set.shiftwidth = 2
-set.tabstop = 2
+set.shiftwidth = 4
+set.tabstop = 4
 set.syntax = 'on'
 
 -- highlight search 
@@ -61,10 +61,6 @@ set.wrap = true
 -- Transparent
 g.transparent_enabled = 1
 g.transparent_factor = 50
-
--- Emmet
-g.user_emmet_mode = 'a'
-g.user_emmet_leader_key = ','
 
 g.mkdp_browser = 'firefox'
 

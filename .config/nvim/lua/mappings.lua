@@ -64,4 +64,3 @@ map('i', '<C-k>', '<Up>')
 
 -- save file
 map('i', '<C-s>', '<ESC>:w<CR>')
-
