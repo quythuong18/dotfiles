@@ -1,66 +1,66 @@
 -- === MAPPINGS ===
 
-local function map(mode, lhs, rhs, opts)
-  local options = { noremap=true, silent=true }
-  if opts then
-    options = vim.tbl_extend('force', options, opts)
-  end
-    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
-
 -- set the leader key
 vim.g.mapleader = ' '
 
 -- NORMAL MODE
 -- Close a buffer
-map('n', 'mm', ':bd<CR>')
+vim.keymap.set('n', 'mm', ':bd<CR>')
 -- Close all buffers
-map('n', 'MM', '::%bd|e#|bd#|\'"<CR>')
+vim.keymap.set('n', 'MM', '::%bd|e#|bd#|\'"<CR>')
 -- Save file
-map('n', '<C-s>', ':w<CR>')
+vim.keymap.set('n', '<C-s>', ':w<CR>')
 -- Copy all
 --map('n', '<C-A>', ':%y+<CR>')
-map('v', '<C-c>', ':yank+<CR>')
+vim.keymap.set('v', '<C-c>', ':yank+<CR>')
 
 -- clear search highlighting
-map('n', '<leader>h', ':nohl<CR>')
+vim.keymap.set('n', '<leader>h', ':nohl<CR>')
 
 -- Scroll up and down a half page and the cursor is in the middle
-map('n', '<C-d>', '<C-d>zz')
-map('n', '<C-u>', '<C-u>zz')
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
 -- Scroll 5 lines
-map('n', '<C-e>', '5<C-e>')
-map('n', '<C-y>', '5<C-y>')
+vim.keymap.set('n', '<C-e>', '5<C-e>')
+vim.keymap.set('n', '<C-y>', '5<C-y>')
+
+-- show error
+vim.keymap.set("n", "<leader>se", vim.diagnostic.open_float)
+
 
 -- set CAPSLOCK to ESC
-map('n', '<CAPSLOCK>', '<ESC>')
+vim.keymap.set('n', '<CAPSLOCK>', '<ESC>')
 
 -- Bufferline mappings
-map('n', '<C-n>', ':bnext<CR>')
-map('n', '<C-p>', ':bprev<CR>')
+vim.keymap.set('n', '<C-n>', ':bnext<CR>')
+vim.keymap.set('n', '<C-p>', ':bprev<CR>')
 
 -- Navigating split windows
-map('n', '<C-h>', '<C-w>h')
-map('n', '<C-l>', '<C-w>l')
+vim.keymap.set('n', '<C-h>', '<C-w>h')
+vim.keymap.set('n', '<C-l>', '<C-w>l')
 
 -- Mappings within plugins
 -- file browser
-map('n', '<leader>e', ':NvimTreeToggle<CR>')
+vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
 
 -- Speech motions
-map('n', '<leader><leader>', ':HopWord<CR>')
+vim.keymap.set('n', '<leader><leader>', ':HopWord<CR>')
 
 -- INSERT MODE
 -- switch to normal mode
-map('i', 'jj', '<ESC>')
+vim.keymap.set('i', 'jj', '<ESC>')
 -- insert mode motions
 -- map('i', '<C-l>', '<Right>')
 -- map('i', '<C-h>', '<Left>')
-map('i', '<C-f>', '<Right>')
-map('i', '<C-b>', '<Left>')
-map('i', '<C-j>', '<Down>')
-map('i', '<C-k>', '<Up>')
+vim.keymap.set('i', '<C-f>', '<Right>')
+vim.keymap.set('i', '<C-b>', '<Left>')
+vim.keymap.set('i', '<C-j>', '<Down>')
+vim.keymap.set('i', '<C-k>', '<Up>')
 
 -- save file
-map('i', '<C-s>', '<ESC>:w<CR>')
+vim.keymap.set('i', '<C-s>', '<ESC>:w<CR>')
+
+-- COMMAND MODE
+vim.keymap.set('c', '<C-a>', '<Home>')
+vim.keymap.set('c', '<C-e>', '<End>')

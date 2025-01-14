@@ -52,11 +52,15 @@ return {
             lspconfig.cssls.setup {
                 capabilities = capabilities,
             }
-            require'lspconfig'.lua_ls.setup{}
-            require'lspconfig'.emmet_ls.setup {
-                on_attach = on_attach,
-                capabilities = capabilities,
-                flags = lsp_flags
+            require'lspconfig'.lua_ls.setup{
+                settings = {
+                    Lua = {
+                        diagnostics = {
+                            -- Get the language server to recognize the `vim` global
+                            globals = {'vim'},
+                        },
+                    },
+                },
             }
             -- lspconfig.rust_analyzer.setup {
             --     -- Server-specific settings. See `:help lspconfig-setup`
