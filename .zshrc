@@ -9,6 +9,7 @@ export EDITOR="nvim"
 export MANPAGER="nvim +Man!"
 export _Z_DATA="$HOME/.z_data/.z"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/electron29/:/usr/lib/"
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk/
 
 # export GTK_IM_MODULE="ibus"
 # export QT_IM_MODULE="ibus"
@@ -19,7 +20,6 @@ export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/electron29/:/usr/lib/"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="dpoggi"
-bindkey \^U backward-kill-line
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -95,6 +95,8 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="/usr/lib/rabbitmq/bin:$PATH"
+export PATH="$JAVA_HOME/bin:$PATH"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -117,7 +119,6 @@ export PATH="$HOME/.local/bin:$PATH"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias lf="lfrun"
 # alias cc="xclip -selection clipboard" # It only works on X11
 alias nv="nvim"
 # alias v="fd --type f --hidden --exclude .git | fzf-tmux -p --reverse | xargs nvim"
@@ -125,7 +126,9 @@ alias sp="pacmd set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-
 alias he="pacmd set-sink-port alsa_output.pci-0000_00_1f.3.analog-stereo analog-output-headphones"
 alias yz="yazi"
 alias ff="fastfetch"
-#pfetch
+
+bindkey "^U" backward-kill-line
+
 fortune -s
 
 # Load Angular CLI autocompletion.

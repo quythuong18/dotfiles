@@ -40,8 +40,8 @@ g.floaterm_keymap_prev = '<F8>'
 g.floaterm_keymap_next = '<F9>'
 g.floaterm_keymap_kill = '<F10>'
 g.floaterm_keymap_toggle = '<F9>'
-g.floaterm_position = 'bottomright'
-g.floaterm_width = 100
+g.floaterm_position = 'bottom'
+g.floaterm_width = 150
 g.floaterm_height = 20
 
 -- Sync clipboard between OS and nvim

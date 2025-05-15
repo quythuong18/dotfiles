@@ -25,8 +25,10 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz')
 vim.keymap.set('n', '<C-e>', '5<C-e>')
 vim.keymap.set('n', '<C-y>', '5<C-y>')
 
--- show error
+-- error stuff
 vim.keymap.set("n", "<leader>se", vim.diagnostic.open_float)
+vim.keymap.set("n", "<leader>ne", vim.diagnostic.goto_next)
+vim.keymap.set("n", "<leader>pe", vim.diagnostic.goto_prev)
 
 
 -- set CAPSLOCK to ESC
@@ -41,8 +43,8 @@ vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
 
 -- Mappings within plugins
--- file browser
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>')
+-- file explorer
+vim.keymap.set('n', '-', ':Oil<CR>')
 
 -- Speech motions
 vim.keymap.set('n', '<leader><leader>', ':HopWord<CR>')

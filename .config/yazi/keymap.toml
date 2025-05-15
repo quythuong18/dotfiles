@@ -4,6 +4,11 @@
 
 [manager]
 
+
+prepend_keymap = [
+	{ on = [ "b", "g" ], run = "chwal $1",          desc = "change the background wallpaper"},
+]
+
 keymap = [
 	{ on = [ "<Esc>" ], run = "escape",             desc = "Exit visual mode, clear selected, or cancel search" },
 	{ on = [ "<C-[>" ], run = "escape",             desc = "Exit visual mode, clear selected, or cancel search" },
@@ -48,8 +53,8 @@ keymap = [
 	{ on = [ "<Left>" ],  run = "leave",    desc = "Go back to the parent directory" },
 	{ on = [ "<Right>" ], run = "enter",    desc = "Enter the child directory" },
 
-	{ on = [ "g", "g" ], run = "arrow -99999999", desc = "Move cursor to the top" },
-	{ on = [ "G" ],      run = "arrow 99999999",  desc = "Move cursor to the bottom" },
+	{ on = [ "g", "g" ], run = "arrow top", desc = "Move cursor to the top" },
+	{ on = [ "G" ],      run = "arrow bot",  desc = "Move cursor to the bottom" },
 
 	# Selection
 	{ on = [ "<Space>" ], run = [ "toggle --state=none", "arrow 1" ], desc = "Toggle the current selection state" },
@@ -307,3 +312,4 @@ keymap = [
 	# Filtering
 	{ on = [ "/" ], run = "filter", desc = "Apply a filter for the help items" },
 ]
+

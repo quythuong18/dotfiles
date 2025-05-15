@@ -11,6 +11,7 @@ return {
         config = function()
             -- nvim-cmp setup
             local cmp = require 'cmp'
+            local luasnip = require 'luasnip'
             cmp.setup {
                 snippet = {
                     expand = function(args)
@@ -45,14 +46,15 @@ return {
             -- Setup language servers.
             local lspconfig = require('lspconfig')
 
-            require'lspconfig'.erlangls.setup{}
+            lspconfig.erlangls.setup{}
             lspconfig.clangd.setup {}
             lspconfig.pyright.setup {}
             lspconfig.ts_ls.setup {}
             lspconfig.cssls.setup {
                 capabilities = capabilities,
             }
-            require'lspconfig'.lua_ls.setup{
+
+            lspconfig.lua_ls.setup{
                 settings = {
                     Lua = {
                         diagnostics = {
@@ -62,6 +64,31 @@ return {
                     },
                 },
             }
+            lspconfig.jdtls.setup{
+                    cmd = {
+                        'jdtls',
+                        '-Xms1g',
+                    },
+                    settings = {
+                        java = {
+                            configuration = {
+                                annotationProcessing = {
+                                    enabled = true,
+                                },
+                                spring = {
+                                    boot = {
+                                        enabled = true
+                                    }
+                                }
+                            },
+                            content = {
+                                generatedSources = {
+                                    enabled = true
+                                }
+                            }
+                        }
+                    },
+                }
             -- lspconfig.rust_analyzer.setup {
             --     -- Server-specific settings. See `:help lspconfig-setup`
             --     settings = {
