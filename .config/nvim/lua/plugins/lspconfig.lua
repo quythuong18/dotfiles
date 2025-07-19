@@ -46,49 +46,25 @@ return {
             -- Setup language servers.
             local lspconfig = require('lspconfig')
 
-            lspconfig.erlangls.setup{}
+            -- lspconfig.erlangls.setup{}
             lspconfig.clangd.setup {}
             lspconfig.pyright.setup {}
-            lspconfig.ts_ls.setup {}
-            lspconfig.cssls.setup {
-                capabilities = capabilities,
-            }
+            -- lspconfig.ts_ls.setup {}
+            -- lspconfig.cssls.setup {
+            --     capabilities = capabilities,
+            -- }
 
-            lspconfig.lua_ls.setup{
-                settings = {
-                    Lua = {
-                        diagnostics = {
-                            -- Get the language server to recognize the `vim` global
-                            globals = {'vim'},
-                        },
-                    },
-                },
-            }
-            lspconfig.jdtls.setup{
-                    cmd = {
-                        'jdtls',
-                        '-Xms1g',
-                    },
-                    settings = {
-                        java = {
-                            configuration = {
-                                annotationProcessing = {
-                                    enabled = true,
-                                },
-                                spring = {
-                                    boot = {
-                                        enabled = true
-                                    }
-                                }
-                            },
-                            content = {
-                                generatedSources = {
-                                    enabled = true
-                                }
-                            }
-                        }
-                    },
-                }
+            -- lspconfig.lua_ls.setup{
+            --     settings = {
+            --         Lua = {
+            --             diagnostics = {
+            --                 -- Get the language server to recognize the `vim` global
+            --                 globals = {'vim'},
+            --             },
+            --         },
+            --     },
+            -- }
+
             -- lspconfig.rust_analyzer.setup {
             --     -- Server-specific settings. See `:help lspconfig-setup`
             --     settings = {
