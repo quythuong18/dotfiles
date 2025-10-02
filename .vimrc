@@ -17,6 +17,7 @@
 "let skip_defaults_vim=1
 
 
+" =============================================
 syntax enable
 set fenc=utf-8
 set number

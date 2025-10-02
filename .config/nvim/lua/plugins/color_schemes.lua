@@ -11,6 +11,7 @@ return {
             ]])
         end,
     },
+    { "kyoz/purify", lazy = false ,name = "purify", priority = 1000},
     { "EdenEast/nightfox.nvim" }, -- night fox
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 }
+    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
 }

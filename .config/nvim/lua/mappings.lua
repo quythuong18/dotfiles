@@ -5,9 +5,9 @@ vim.g.mapleader = ' '
 
 -- NORMAL MODE
 -- Close a buffer
-vim.keymap.set('n', 'mm', ':bd<CR>')
+-- vim.keymap.set('n', '<leader>d', ':bd<CR>')
 -- Close all buffers
-vim.keymap.set('n', 'MM', '::%bd|e#|bd#|\'"<CR>')
+-- vim.keymap.set('n', '<leader>D', ':%bd|e#|bd#|\'"<CR>')
 -- Save file
 vim.keymap.set('n', '<C-s>', ':w<CR>')
 -- Copy all

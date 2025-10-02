@@ -3,7 +3,7 @@ plugins = ["scratchpads"]
 
 [scratchpads.kitty]
 animation = "fromTop"
-command = "kitty --class kitty-dropterm"
+command = "kitty --title FloatingKitty"
 class = "kitty-dropterm"  # check: hyprctl clients | grep class
 state = "floating"
 size = "60% 50%"  # size of the window relative to the screen size
